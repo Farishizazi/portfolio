@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M Faris Hizazi - Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0ea5e9', // Sky blue
+                        secondary: '#1e293b', // Slate 800
+                        darkbg: '#0f172a', // Slate 900
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .timeline-dot {
+            box-shadow: 0 0 0 4px #0f172a, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold gradient-text tracking-tighter">MFH<span class="text-white">.</span></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-gray-300 hover:text-primary transition-colors text-sm font-medium">About</a>
+                    <a href="#experience" class="text-gray-300 hover:text-primary transition-colors text-sm font-medium">Experience</a>
+                    <a href="#education" class="text-gray-300 hover:text-primary transition-colors text-sm font-medium">Education & Projects</a>
+                    <a href="#skills" class="text-gray-300 hover:text-primary transition-colors text-sm font-medium">Skills</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white border border-primary/20 transition-all text-sm font-medium">Contact Me</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#about" class="mobile-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">About</a>
+                <a href="#experience" class="mobile-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Experience</a>
+                <a href="#education" class="mobile-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Education</a>
+                <a href="#skills" class="mobile-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Skills</a>
+                <a href="#contact" class="mobile-link block px-3 py-2 text-base font-medium text-primary">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/20 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-indigo-500/20 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="md:w-3/5 space-y-6">
+                <p class="text-primary font-medium tracking-wide uppercase text-sm">Hello, I'm</p>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    M Faris Hizazi
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-400 font-light">
+                    <span class="gradient-text font-medium">Geophysicist</span> & <span class="gradient-text font-medium">Software Engineer</span>
+                </h2>
+                <p class="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0">
+                    Bridging earth sciences and software development. Specializing in numerical modeling, scientific programming, and web development to solve complex geospatial and energy challenges.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                    <a href="#contact" class="px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-sky-600 transition-colors shadow-lg shadow-primary/25">Get In Touch</a>
+                    <a href="https://www.linkedin.com/in/farishizazi/" target="_blank" class="px-8 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+                        <i class="fab fa-linkedin text-blue-400"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-2/5 relative">
+                <div class="aspect-square rounded-full overflow-hidden border-4 border-white/10 shadow-2xl relative bg-secondary flex items-center justify-center">
+                    <i class="fas fa-globe-asia text-9xl text-white/20"></i>
+                    <i class="fas fa-code text-5xl text-primary absolute bottom-1/4 right-1/4 bg-darkbg p-3 rounded-full shadow-lg"></i>
+                    <i class="fas fa-layer-group text-4xl text-indigo-400 absolute top-1/4 left-1/4 bg-darkbg p-3 rounded-full shadow-lg"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-secondary/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-primary">Me</span></h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
+                    <p>
+                        I am a highly motivated Geophysics graduate from Gadjah Mada University with a unique dual-focus in <strong class="text-white">Earth Sciences</strong> and <strong class="text-white">Software Engineering</strong>.
+                    </p>
+                    <p>
+                        My experience spans numerical modeling and scientific programming for 2D elastic seismic wave simulations using high-order finite difference methods. I am highly proficient in transforming complex geospatial and geophysical data into accessible, high-performance web applications.
+                    </p>
+                    <p>
+                        I have actively contributed to disaster mitigation programs like BMKG's Tsunami Ready Communities and driven energy innovation at the Geoseismal Research Center. My goal is to leverage technology and data to advance natural resource exploration and community resilience.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass p-6 rounded-2xl border border-white/5 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <i class="fas fa-laptop-code text-4xl text-primary mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Development</h3>
+                        <p class="text-sm text-gray-400">Python, Flask, JavaScript, SQL/MariaDB</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl border border-white/5 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <i class="fas fa-satellite-dish text-4xl text-indigo-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Geophysics</h3>
+                        <p class="text-sm text-gray-400">Seismic processing, VLF-EM, Reservoir Analysis</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl border border-white/5 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <i class="fas fa-chart-area text-4xl text-teal-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Data Viz</h3>
+                        <p class="text-sm text-gray-400">Shot/VSP gathers, wiggle plots, ArcGIS Pro</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl border border-white/5 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <i class="fas fa-users-viewfinder text-4xl text-sky-400 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Community</h3>
+                        <p class="text-sm text-gray-400">Disaster mitigation & resource management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Work <span class="text-primary">Experience</span></h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative border-l-2 border-white/10 pl-8 ml-4 md:ml-0 md:pl-0 md:border-none space-y-16">
+                
+                <!-- Experience Item 1: Geoseismal Research Center -->
+                <div class="relative md:flex md:items-center md:justify-between group">
+                    <div class="hidden md:block md:w-5/12 text-right pr-8">
+                        <h3 class="text-xl font-bold text-white">Software Engineer</h3>
+                        <a href="#" class="text-primary hover:underline">Geoseismal Research Center</a>
+                        <p class="text-sm text-gray-400 mt-1">Yogyakarta, Indonesia</p>
+                    </div>
+                    
+                    <div class="absolute -left-[41px] top-1 md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full bg-primary timeline-dot group-hover:scale-125 transition-transform duration-300 z-10"></div>
+                    
+                    <div class="md:w-5/12 md:pl-8 glass p-6 rounded-2xl border border-white/10 relative space-y-4">
+                        <span class="inline-block px-3 py-1 bg-white/5 rounded-full text-xs text-primary">Aug 2024 - Apr 2026</span>
+                        <div class="md:hidden">
+                            <h3 class="text-xl font-bold text-white">Software Engineer</h3>
+                            <p class="text-primary">Geoseismal Research Center</p>
+                        </div>
+                        
+                        <!-- Geoseismal Project Image Showcase -->
+                        <div class="rounded-xl overflow-hidden border border-white/10 bg-darkbg aspect-video relative group/img">
+                            <img src="https://placehold.co/600x338/0f172a/38bdf8?text=Geoseismal+Research+Center+App" alt="Geoseismal Research Center Web App" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 via-transparent flex items-end p-3">
+                                <span class="text-xs text-sky-300 font-medium"><i class="fas fa-desktop mr-1"></i> Pertagamant Web App & Seismic Visualizer</span>
+                            </div>
+                        </div>
+
+                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                            <li>Developed geophysical data models to enhance seismic and non-seismic interpretation.</li>
+                            <li>Designed and optimized front-end components for geophysical web applications (Pertagamant), improving UI and data visualization.</li>
+                            <li>Collaborated with backend engineers on Python API integration, enhancing dataset accessibility.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2: PT. Cronos Solusi Bisnis -->
+                <div class="relative md:flex md:items-center md:justify-between md:flex-row-reverse group">
+                    <div class="hidden md:block md:w-5/12 text-left pl-8">
+                        <h3 class="text-xl font-bold text-white">Enterprise Back-end Intern</h3>
+                        <a href="#" class="text-primary hover:underline">PT. Cronos Solusi Bisnis</a>
+                        <p class="text-sm text-gray-400 mt-1">Yogyakarta, Indonesia</p>
+                    </div>
+                    
+                    <div class="absolute -left-[41px] top-1 md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full bg-indigo-500 timeline-dot group-hover:scale-125 transition-transform duration-300 z-10"></div>
+                    
+                    <div class="md:w-5/12 md:pr-8 text-left md:text-right glass p-6 rounded-2xl border border-white/10 relative space-y-4">
+                        <span class="inline-block px-3 py-1 bg-white/5 rounded-full text-xs text-indigo-400">Aug 2022 - Dec 2022</span>
+                        <div class="md:hidden">
+                            <h3 class="text-xl font-bold text-white">Enterprise Back-end Intern</h3>
+                            <p class="text-indigo-400">PT. Cronos Solusi Bisnis</p>
+                        </div>
+                        
+                        <!-- Cronos Project Image Showcase -->
+                        <div class="rounded-xl overflow-hidden border border-white/10 bg-darkbg aspect-video relative group/img text-left">
+                            <img src="https://placehold.co/600x338/0f172a/818cf8?text=iBoost+RBAC+Architecture" alt="iBoost Project RBAC & Architecture" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 via-transparent flex items-end p-3">
+                                <span class="text-xs text-indigo-300 font-medium"><i class="fas fa-server mr-1"></i> iBoost Project: RBAC & MariaDB Schema</span>
+                            </div>
+                        </div>
+
+                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside md:list-none md:space-y-3">
+                            <li class="md:flex md:items-start md:justify-end md:gap-2">
+                                <span class="md:text-right">Built and deployed web components using Python (Flask), DBMS, integrating backend logic with user-focused design.</span>
+                                <span class="hidden md:inline text-indigo-400">•</span>
+                            </li>
+                            <li class="md:flex md:items-start md:justify-end md:gap-2">
+                                <span class="md:text-right">Implemented JWT authentication to secure access and session management.</span>
+                                <span class="hidden md:inline text-indigo-400">•</span>
+                            </li>
+                            <li class="md:flex md:items-start md:justify-end md:gap-2">
+                                <span class="md:text-right">Developed architecture for the iBoost project, designing relational database schemas (MariaDB) to manage roles, permissions, and workflows.</span>
+                                <span class="hidden md:inline text-indigo-400">•</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3: BMKG -->
+                <div class="relative md:flex md:items-center md:justify-between group">
+                    <div class="hidden md:block md:w-5/12 text-right pr-8">
+                        <h3 class="text-xl font-bold text-white">Project Intern</h3>
+                        <a href="#" class="text-primary hover:underline">BMKG</a>
+                        <p class="text-sm text-gray-400 mt-1">Yogyakarta, Indonesia</p>
+                    </div>
+                    
+                    <div class="absolute -left-[41px] top-1 md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full bg-teal-500 timeline-dot group-hover:scale-125 transition-transform duration-300 z-10"></div>
+                    
+                    <div class="md:w-5/12 md:pl-8 glass p-6 rounded-2xl border border-white/10 relative">
+                        <span class="inline-block px-3 py-1 bg-white/5 rounded-full text-xs text-teal-400 mb-3">Jan 2022 - Mar 2022</span>
+                        <div class="md:hidden mb-3">
+                            <h3 class="text-xl font-bold text-white">Project Intern</h3>
+                            <p class="text-teal-400">BMKG (Meteorology, Climatology, Geophysics)</p>
+                        </div>
+                        <p class="text-gray-300 text-sm">
+                            Prepared select villages in the DIY province and surrounding areas to become a <strong class="text-white">Tsunami Ready Community</strong> based on 12 IOC-UNESCO indicators, focusing on disaster resilience and community preparedness.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Center Line for Desktop -->
+                <div class="hidden md:block absolute top-0 bottom-0 left-1/2 w-0.5 bg-white/10 -translate-x-1/2"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-20 bg-secondary/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Education & <span class="text-primary">Research</span></h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- University Card with Thesis Poster Showcase -->
+            <div class="glass rounded-2xl p-8 border border-white/10 mb-12 shadow-xl shadow-black/20">
+                <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-white/10 pb-6 mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Gadjah Mada University (UGM)</h3>
+                        <p class="text-lg text-gray-300 mt-1">Bachelor of Geophysics</p>
+                        <p class="text-primary mt-2 flex items-center gap-2">
+                            <i class="fas fa-star text-sm"></i> GPA: 3.70/4.00
+                        </p>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-left md:text-right">
+                        <span class="inline-block px-4 py-2 bg-white/5 rounded-full text-sm text-gray-300">
+                            Aug 2019 - Apr 2026
+                        </span>
+                        <p class="text-sm text-gray-400 mt-2">Yogyakarta, Indonesia</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4 text-gray-300 text-sm md:text-base">
+                        <div>
+                            <strong class="text-white block mb-1">Final Thesis:</strong>
+                            <p class="italic text-gray-400 border-l-2 border-primary pl-4 py-1">
+                                "Analysis of 2D Elastic Seismic Wave Propagation Using Finite Difference Method with 8th-, 12th-, 16th-Order Spatial Schemes on a Synthetic Hydrocarbon Reservoir Model."
+                            </p>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Simulated 2D velocity-stress elastic wave propagation on an anticline synthetic reservoir using high-order finite difference methods on staggered grids, proving Spatial Order-12 as the optimal scheme ($GOF > 9.3$).
+                        </p>
+                        <div class="flex items-start gap-3 pt-2">
+                            <i class="fas fa-chalkboard-user text-primary mt-1"></i>
+                            <p>Served as a teaching assistant for Geophysics Computing Practicum, supporting student learning with programming materials.</p>
+                        </div>
+                    </div>
+
+                    <!-- Thesis Poster Preview Card -->
+                    <div class="lg:col-span-5 bg-darkbg p-4 rounded-xl border border-white/10 space-y-3">
+                        <div class="flex items-center justify-between text-xs font-medium text-gray-400">
+                            <span><i class="fas fa-file-pdf text-red-400 mr-1"></i> Thesis Research Poster</span>
+                            <span class="text-primary font-mono">UGM Geophysics</span>
+                        </div>
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden border border-white/5 relative group bg-secondary/50 flex items-center justify-center">
+                            <img src="https://placehold.co/600x450/0f172a/38bdf8?text=Thesis+Research+Poster+Preview" alt="Thesis Research Poster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 via-transparent flex items-end p-4">
+                                <span class="text-xs text-white font-medium">Finite Difference 12th-Order Wave Propagation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <h3 class="text-2xl font-bold text-white mb-6 text-center md:text-left">Key Field Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass p-6 rounded-xl border border-white/5 hover:border-primary/50 transition-colors">
+                    <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-water text-primary text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Karst Groundwater Survey</h4>
+                    <p class="text-sm text-primary mb-3">Gunungkidul, Yogyakarta</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Conducted a survey utilizing Very Low Frequency Electromagnetic (VLF-EM) methods to estimate subsurface river systems and potential flow paths for sustainable groundwater management.
+                    </p>
+                </div>
+
+                <div class="glass p-6 rounded-xl border border-white/5 hover:border-indigo-500/50 transition-colors">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-map-location-dot text-indigo-400 text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Community Groundwater Exploration</h4>
+                    <p class="text-sm text-indigo-400 mb-3">Kalikotes, Central Java</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Executed VLF-EM surveys to delineate aquifer boundaries and support rural village water security initiatives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical <span class="text-primary">Skills</span></h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl border border-white/5 space-y-4">
+                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Programming & IT</h3>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Python</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Flask</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">SQL/MariaDB</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">JavaScript</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">REST APIs</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Julia</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Fortran</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border border-white/5 space-y-4">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-400 text-xl">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Geophysics</h3>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Seismic Processing</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">2D/3D Gravity Modeling</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Waveform Analysis</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">GIS & ArcGIS Pro</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">VLF-EM Surveys</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border border-white/5 space-y-4">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-xl flex items-center justify-center text-teal-400 text-xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Soft Skills & Languages</h3>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Cross-disciplinary Comm.</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Project Scheduling</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">Indonesian (Native)</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-300">English (Professional)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-16 bg-secondary/50 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="text-3xl font-bold text-white">Let's Connect</h2>
+            <p class="text-gray-400 max-w-md mx-auto text-sm">
+                Open for opportunities in software engineering, geophysics research, and energy tech innovation.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="mailto:farishizazi@gmail.com" class="p-3 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-full text-white transition-all">
+                    <i class="fas fa-envelope text-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/farishizazi/" target="_blank" class="p-3 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-full text-white transition-all">
+                    <i class="fab fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="tel:+6281296546241" class="p-3 bg-white/5 hover:bg-primary/20 border border-white/10 hover:border-primary/50 rounded-full text-white transition-all">
+                    <i class="fas fa-phone text-lg"></i>
+                </a>
+            </div>
+            <p class="text-xs text-gray-500 pt-8">&copy; 2026 M Faris Hizazi. Built with Precision & Code.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
